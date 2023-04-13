@@ -63,11 +63,31 @@ public class testSelectionSort {
     public void testMixed(){
         
         /** Test data contains with both positive, negative and zeros **/
+		SelectionSort sort = new SelectionSort();
+		int a[] = {1,2,-3,-4,0,6,-7,-8};		
+		int sorted[] = {-8,-7,-4,-3,0,1,2,6};
+		
+		int[] returnValue;
+		returnValue = sort.basicSelectionSort(a);
+		
+		for(int i = 0; i < returnValue.length; i++) {
+			assertEquals(sorted[i], returnValue[i]);
+		}
     }
     
     public void testDuplicates(){
         
         /** Test data contains duplicates **/
+		SelectionSort sort = new SelectionSort();
+		int a[] = {-20,-20,5,6,2,12,12,0};		
+		int sorted[] = {-20,-20,0,2,5,6,12,12};
+		
+		int[] returnValue;
+		returnValue = sort.basicSelectionSort(a);
+		
+		for(int i = 0; i < returnValue.length; i++) {
+			assertEquals(sorted[i], returnValue[i]);
+		}
     }
 
 
