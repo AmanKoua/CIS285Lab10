@@ -7,9 +7,9 @@ package Start;
  * and open the template in the editor.
  */
 
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 import static org.junit.Assert.*;
-import org.junit.Assert;
-import org.junit.Test;
 
 public class testSelectionSort {
 	@Test
@@ -43,7 +43,21 @@ public class testSelectionSort {
     
     public void testNegative(){
         
-        /** Test data contains negative values only **/
+		SelectionSort sort = new SelectionSort();
+		int a[] = {1,4,22,36,1,64,46,1};
+		
+		for (int i = 0; i < a.length; i++) { // invert list
+			a[i] = a[i] * -1;
+		}
+		
+		int sorted[] = {-64,-46,-36,-22,-4,-1,-1,-1};
+		
+		int[] returnValue;
+		returnValue = sort.basicSelectionSort(a);
+		
+		for(int i = 0; i < returnValue.length; i++) {
+			assertEquals(sorted[i], returnValue[i]);
+		}
     }
     
     public void testMixed(){
